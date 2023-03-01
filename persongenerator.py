@@ -1,31 +1,31 @@
 import random
 
 # Define race distribution
-races = ['human', 'elf', 'dwarf', 'halfling', 'gnome', 'half-elf', 'half-orc', 'dragonborn', 'tiefling', 'aasimar', 'genasi', 'goliath', 'kenku', 'tabaxi', 'triton', 'yuan-ti pureblood', 'minotaur']
+races = ['Human', 'Elf', 'Dwarf', 'Halfling', 'Gnome', 'Half-Elf', 'Half-Orc', 'Dragonborn', 'Tiefling', 'Aasimar', 'Genasi', 'Goliath', 'Kenku', 'Tabaxi', 'Triton', 'Yuan-ti Pureblood', 'Minotaur']
 race_distribution = [0.30, 0.15, 0.10, 0.10, 0.10, 0.05, 0.05, 0.05, 0.03, 0.02, 0.02, 0.02, 0.02, 0.02, 0.01, 0.01, 0.05]
 
 # Define age range for each race
 age_range = {
-    'human': (18, 70),
-    'elf': (25, 250),
-    'dwarf': (40, 350),
-    'halfling': (20, 120),
-    'gnome': (40, 500),
-    'half-elf': (20, 180),
-    'half-orc': (18, 60),
-    'dragonborn': (15, 80),
-    'tiefling': (20, 100),
-    'aasimar': (20, 100),
-    'genasi': (20, 150),
-    'goliath': (18, 80),
-    'kenku': (15, 60),
-    'tabaxi': (20, 80),
-    'triton': (20, 200),
-    'yuan-ti pureblood': (18, 80),
-    'minotaur': (17,150)
+    'Human': (18, 70),
+    'Elf': (25, 250),
+    'Dwarf': (40, 350),
+    'Halfling': (20, 120),
+    'Gnome': (40, 500),
+    'Half-Elf': (20, 180),
+    'Half-Orc': (18, 60),
+    'Dragonborn': (15, 80),
+    'Tiefling': (20, 100),
+    'Aasimar': (20, 100),
+    'Genasi': (20, 150),
+    'Goliath': (18, 80),
+    'Kenku': (15, 60),
+    'Tabaxi': (20, 80),
+    'Triton': (20, 200),
+    'Yuan-ti Pureblood': (18, 80),
+    'Minotaur': (17,150)
 }
 
-gender_options = ['male', 'female', 'nonbinary']
+gender_options = ['Male', 'Female', 'Nonbinary']
 
 # Generate 10 persons
 persons = []
@@ -39,7 +39,7 @@ for i in range(70):
     #Generate gender based on options
     gender = random.choices(gender_options)[0]
     
-    if race in ['human', 'elf', 'dwarf', 'halfling', 'dragonborn', 'tiefling', 'half-orc'] and gender in ['male', 'female']:
+    if race in ['Human', 'Elf', 'Dwarf', 'Halfling', 'Dragonborn', 'Tiefling', 'Half-Orc'] and gender in ['Male', 'Female']:
         filename = f"data/{race}_{gender}.txt"
         with open(filename) as f:
             names_list = f.readlines()
