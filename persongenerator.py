@@ -1,8 +1,9 @@
 import random
 
 # Define race distribution
-races = ['Human', 'Elf', 'Dwarf', 'Halfling', 'Gnome', 'Half-Elf', 'Half-Orc', 'Dragonborn', 'Tiefling', 'Aasimar', 'Genasi', 'Goliath', 'Kenku', 'Tabaxi', 'Triton', 'Yuan-ti Pureblood', 'Minotaur']
-race_distribution = [0.30, 0.15, 0.10, 0.10, 0.10, 0.05, 0.05, 0.05, 0.03, 0.02, 0.02, 0.02, 0.02, 0.02, 0.01, 0.01, 0.05]
+races = ['Human', 'Elf', 'Dwarf', 'Halfling', 'Half-Elf', 'Half-Orc', 'Gnome', 'Dragonborn', 'Tiefling', 'Minotaur', 'Triton', 'Aasimar', 'Goliath', 'Kenku', 'Yuan-ti Pureblood', 'Tabaxi', 'Air Genasi', 'Water Genasi', 'Fire Genasi']
+race_distribution = [0.30, 0.15, 0.10, 0.10, 0.10, 0.05, 0.05, 0.05, 0.03, 0.02, 0.02, 0.02, 0.02, 0.02, 0.01, 0.01, 0.05, 0.02, 0.02]\
+
 
 # Define age range for each race
 age_range = {
@@ -39,7 +40,7 @@ for i in range(70):
     #Generate gender based on options
     gender = random.choices(gender_options)[0]
     
-    if race in ['Human', 'Elf', 'Dwarf', 'Halfling', 'Dragonborn', 'Tiefling', 'Half-Orc'] and gender in ['Male', 'Female']:
+    if race in ['Human', 'Elf', 'Dwarf', 'Halfling', 'Dragonborn', 'Tiefling', 'Half-Orc', 'Aasimar', 'Gnome', 'Goliath'] and gender in ['Male', 'Female']:
         filename = f"data/{race}_{gender}.txt"
         with open(filename) as f:
             names_list = f.readlines()
