@@ -1,4 +1,5 @@
 import random
+import uuid
 
 # Define race distribution
 race_dictionary = {
@@ -50,8 +51,18 @@ gender_options = ['Male', 'Female', 'Nonbinary']
 
 gendered_races = ['Human', 'Elf', 'Dwarf', 'Halfling', 'Half-Elf', 'Half-Orc', 'Gnome', 'Dragonborn', 'Tiefling', 'Minotaur', 'Triton', 'Aasimar', 'Goliath']
 
+# Define function to generate unique ID
+def generate_id():
+    current_id = 0
+    while True:
+        current_id += 1
+        yield current_id
+
+id_generator = generate_id()
+
 # Generate 10 persons
 persons = []
+person_id = 0
 for i in range(70):
     # Randomly select race based on distribution
     race = random.choices(races, race_distribution)[0]
@@ -89,9 +100,9 @@ for i in range(70):
         name = random.choice(names_list).strip()
         race = element + " " + race  
 
-    # Add person to list
-    person = {'name': name, 'age': age, 'race': race, 'gender': gender}
+    # Add person to list with unique identifier
+    person = {'id': person_id, 'name': name, 'age': age, 'race': race, 'gender': gender}
     persons.append(person)
-
-# Print list of persons
-print(persons)
+    
+    # Increment person ID
+    person_id += 1
