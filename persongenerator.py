@@ -10,7 +10,7 @@ race_dictionary = {
     'Half-Elf': 0.10,
     'Half-Orc': 0.05,
     'Gnome': 0.05,
-    'Dragonborn': 0.05,
+#    'Dragonborn': 0.05,
     'Tiefling': 0.03,
     'Minotaur': 0.03,
     'Triton': 0.02,
@@ -35,7 +35,7 @@ age_range = {
     'Gnome': (40, 500),
     'Half-Elf': (20, 180),
     'Half-Orc': (18, 60),
-    'Dragonborn': (15, 80),
+#    'Dragonborn': (15, 80),
     'Tiefling': (20, 100),
     'Aasimar': (20, 100),
     'Genasi': (20, 150),
@@ -63,7 +63,7 @@ id_generator = generate_id()
 # Generate 10 persons
 persons = []
 person_id = 0
-for i in range(70):
+for i in range(60):
     # Randomly select race based on distribution
     race = random.choices(races, race_distribution)[0]
     
