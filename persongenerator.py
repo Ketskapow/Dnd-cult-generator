@@ -63,7 +63,7 @@ id_generator = generate_id()
 # Generate 10 persons
 persons = []
 person_id = 0
-for i in range(60):
+for i in range(70):
     # Randomly select race based on distribution
     race = random.choices(races, race_distribution)[0]
     

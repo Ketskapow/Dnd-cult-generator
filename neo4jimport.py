@@ -35,4 +35,11 @@ for person in ordered_persons:
         superior = next(filter(lambda p: p['id'] == person['superior'], ordered_persons))
         superior_node = nodes[ordered_persons.index(superior)]
         relationship = Relationship(person_node, "REPORTS_TO", superior_node)
-        graph.create(relationship)        
+        graph.create(relationship)
+    if 'contact' in person:
+        contact = next(filter(lambda p: p['id'] == person['contact'], ordered_persons), None)
+        if contact:
+            person_node = nodes[ordered_persons.index(person)]
+            contact_node = nodes[ordered_persons.index(contact)]
+            relationship = Relationship(person_node, "IN_CONTACT_WITH", contact_node)
+            graph.create(relationship)        

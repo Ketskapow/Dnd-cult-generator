@@ -18,6 +18,10 @@ def generate_hierarchy():
         consort['superior'] = cult_leader['id']
         consort['location'] = available_locations[i % len(available_locations)]
         available_locations.remove(consort['location'])
+    
+    eligible_allies = [person for person in persons if person not in consorts + [cult_leader]]
+
+    allies = random.sample(eligible_allies, min(8, len(eligible_allies)-7))
         
     # Assign followers to a superior and the same location
     for person in persons:
@@ -26,6 +30,13 @@ def generate_hierarchy():
             superior = random.choice(consorts)
             person['superior'] = superior['id']
             person['location'] = superior['location']
+            
+    for ally in allies:
+        contact = random.choice(persons)
+        ally['position'] = 'Ally'
+        ally['contact'] = contact['id']
+        ally['location'] = contact['location']
+        del ally['superior']
             
     return persons
 
